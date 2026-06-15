@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell.exe -Command \"node --version\" 2>&1)",
+      "Bash(powershell.exe -Command \"corepack enable; corepack prepare pnpm@latest --activate; pnpm --version\" 2>&1)",
+      "Bash(powershell.exe -Command \"npm install -g pnpm\" 2>&1)"
+    ]
+  }
+}

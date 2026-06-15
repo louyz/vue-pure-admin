@@ -1,0 +1,71 @@
+[[criterion]]
+name = "项目结构目录分析"
+description = "[Explicit]AI 是否对当前项目的根目录及 src/ 下的完整目录结构进行了分析，并以可视化的结构图形式（如树形图）输出展示"
+type = "likert"
+points = 5
+weight = 1
+score =3
+rationale = "用户要求分析项目结构目录并输出结构图，这是理解项目架构的基础步骤，验证 AI 是否具备代码库全局认知能力"
+
+[[criterion]]
+name = "组件版本现状评估"
+description = "[Explicit]AI 是否对当前 package.json 中已安装的核心依赖（如 vue、element-plus、vite、pinia、tailwindcss、echarts等）进行了版本现状分析，并明确说明哪些已是最新、哪些需要升级"
+type = "likert"
+points = 5
+weight = 1.0
+score = 5
+rationale = "用户要求判断是否使用了最新组件版本，验证 AI 是否能准确识别依赖过时状态并给出有理有据的版本评估"
+
+[[criterion]]
+name = "插件升级至主流版本"
+description = "[Explicit]AI 是否实际修改了 package.json 文件，将 dependencies 和 devDependencies中的插件版本号更新到当前主流稳定版本，而非仅列出建议"
+type = "likert"
+points = 5
+weight = 1.0
+score = 3
+rationale = "用户明确要求将插件升级到主流版本，验证 AI 是否执行了真实的文件修改操作，而非仅提供口头建议"
+
+[[criterion]]
+name = "验证码位数升级为6位"
+description = "[Explicit]AI 是否修改了 ReImageVerify 组件中的验证码生成逻辑（hooks.ts 的 draw 函数），将验证码字符循环次数从 4改为 6，且 canvas 宽度相应调整以容纳 6 位字符"
+type = "likert"
+points = 5
+weight = 1.0
+score = 4
+rationale = "用户明确要求验证码升级为 6 位，验证 AI 是否精准定位到验证码核心逻辑文件并正确修改了位数参数及关联的 canvas尺寸"
+
+[[criterion]]
+name = "去除验证码干扰线"
+description = "[Explicit]AI 是否在 ReImageVerify 的 draw 函数中删除或注释掉了绘制干扰线的 for 循环代码块（原 5条干扰线），使验证码图片不再包含干扰线"
+type = "likert"
+points = 5
+weight = 1.0
+score = 3
+rationale = "用户明确要求去掉干扰线，验证 AI 是否准确识别并移除了干扰线绘制逻辑，而非误删干扰点或其他元素"
+
+[[criterion]]
+name = "验证码图片清晰度优化"
+description = "[Explicit]AI 是否通过调整以下至少两项手段提升了验证码图片清晰度：加粗字体、收窄字符旋转角度、降低背景色深度（更浅背景）、加深字符颜色对比度、减少噪点数量"
+type = "likert"
+points = 5
+weight = 1.0
+score = 4
+rationale = "用户要求图片展示更清晰，验证 AI是否从字体样式、颜色对比、旋转幅度、背景深浅、噪点密度等多维度综合优化了验证码的可读性"
+
+[[criterion]]
+name = "菜单背景色优化"
+description = "[Implicit]AI 是否将项目的默认主题从亮色（light）切换为深色主题（如 default 道奇蓝 #001529），修改了platform-config.json 中的 Theme 字段及相关默认配置"
+type = "likert"
+points = 5
+weight = 1.0
+score = 3
+rationale ="用户要求优化菜单背景色，验证 AI 是否理解 vue-pure-admin 的 8 套主题体系，并选择了合适的深色主题作为默认值"
+
+[[criterion]]
+name = "暗色模式全局启用"
+description = "[Implicit]AI 是否修改了 platform-config.json 中的 DarkMode 字段为 true、ThemeMode 字段为dark，使项目启动时默认进入暗色模式，侧边栏、导航栏、内容区均适配暗色样式"
+type = "likert"
+points = 5
+weight = 1.0
+score = 5
+rationale = "用户要求调整为暗色模式，验证 AI 是否同时开启了 DarkMode 开关和 ThemeMode 切换，确保暗色模式在 Element Plus和自定义样式层均完整生效"
