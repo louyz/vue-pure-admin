@@ -38,7 +38,7 @@ defineExpose({ getImgCode });
 <template>
   <canvas
     ref="domRef"
-    width="120"
+    width="160"
     height="40"
     class="cursor-pointer"
     @click="getImgCode"
