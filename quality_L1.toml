@@ -1,6 +1,6 @@
 [[criterion]]
 name = "项目结构目录分析"
-description = "[Explicit]AI 是否对当前项目的根目录及 src/ 下的完整目录结构进行了分析，并以可视化的结构图形式（如树形图）输出展示"
+description = "[Explicit]AI 是否对项目目录结构进行了完整分析并以可视化树形图形式输出展示。1: 是否对项目根目录下的顶层文件和目录进行了分析说明 2: 是否深入分析了 src/ 目录下的完整子目录层级结构 3: 是否以树形图或类似的可视化层级结构形式输出展示 4: 结构图是否覆盖了项目的主要目录而非仅列出部分 5: 是否对各关键目录的用途进行了正确识别和标注说明"
 type = "likert"
 points = 5
 weight = 1
@@ -9,7 +9,7 @@ rationale = "用户要求分析项目结构目录并输出结构图，这是理�
 
 [[criterion]]
 name = "组件版本现状评估"
-description = "[Explicit]AI 是否对当前 package.json 中已安装的核心依赖（如 vue、element-plus、vite、pinia、tailwindcss、echarts等）进行了版本现状分析，并明确说明哪些已是最新、哪些需要升级"
+description = "[Explicit]AI 是否对 package.json 中核心依赖的版本现状进行了全面评估并给出版本升级建议。1: 是否读取并分析了 package.json 中的核心依赖列表 2: 是否逐一说明了各核心依赖（如 vue、element-plus、vite、pinia 等）的当前版本状态 3: 是否明确指出哪些依赖已是最新版本、哪些需要升级 4: 是否对过时或存在安全风险的依赖包进行了识别说明 5: 升级建议是否有理有据而非仅罗列版本号"
 type = "likert"
 points = 5
 weight = 1.0
@@ -18,7 +18,7 @@ rationale = "用户要求判断是否使用了最新组件版本，验证 AI 是
 
 [[criterion]]
 name = "插件升级至主流版本"
-description = "[Explicit]AI 是否实际修改了 package.json 文件，将 dependencies 和 devDependencies中的插件版本号更新到当前主流稳定版本，而非仅列出建议"
+description = "[Explicit]AI 是否实际修改了 package.json 将依赖插件更新至当前主流稳定版本。1: 是否实际打开了 package.json 文件进行修改操作而非仅口头建议 2: 是否将 dependencies 中的依赖版本号更新到当前主流版本 3: 是否将 devDependencies 中的依赖版本号更新到当前主流版本 4: 升级的目标版本是否为当前主流稳定版而非 beta 或预发布版 5: 是否覆盖了主要的核心依赖而非仅更新个别包"
 type = "likert"
 points = 5
 weight = 1.0
@@ -27,7 +27,7 @@ rationale = "用户明确要求将插件升级到主流版本，验证 AI 是否
 
 [[criterion]]
 name = "验证码位数升级为6位"
-description = "[Explicit]AI 是否修改了 ReImageVerify 组件中的验证码生成逻辑（hooks.ts 的 draw 函数），将验证码字符循环次数从 4改为 6，且 canvas 宽度相应调整以容纳 6 位字符"
+description = "[Explicit]AI 是否将验证码生成逻辑从 4 位修改为 6 位并相应调整了 canvas 尺寸。1: 是否定位到 ReImageVerify 组件的 hooks.ts 文件中的 draw 函数 2: 是否将验证码字符的循环次数从 4 修改为 6 3: 是否相应扩展了 canvas 宽度以容纳 6 位字符的显示 4: 修改后验证码是否正常生成为 6 位字符 5: 是否未破坏验证码的其他绘制逻辑（如干扰点、背景等）"
 type = "likert"
 points = 5
 weight = 1.0
@@ -36,7 +36,7 @@ rationale = "用户明确要求验证码升级为 6 位，验证 AI 是否精准
 
 [[criterion]]
 name = "去除验证码干扰线"
-description = "[Explicit]AI 是否在 ReImageVerify 的 draw 函数中删除或注释掉了绘制干扰线的 for 循环代码块（原 5条干扰线），使验证码图片不再包含干扰线"
+description = "[Explicit]AI 是否在验证码绘制函数中移除了干扰线逻辑且未误删其他绘制元素。1: 是否在 draw 函数中定位到绘制干扰线的代码块 2: 是否删除或注释掉了干扰线绘制的 for 循环 3: 是否保留了验证码字符的正常绘制逻辑不受影响 4: 是否未误删干扰点等其他非干扰线的绘制元素 5: 修改后的验证码图片是否仅显示字符和干扰点而不含干扰线"
 type = "likert"
 points = 5
 weight = 1.0
@@ -45,7 +45,7 @@ rationale = "用户明确要求去掉干扰线，验证 AI 是否准确识别并
 
 [[criterion]]
 name = "验证码图片清晰度优化"
-description = "[Explicit]AI 是否通过调整以下至少两项手段提升了验证码图片清晰度：加粗字体、收窄字符旋转角度、降低背景色深度（更浅背景）、加深字符颜色对比度、减少噪点数量"
+description = "[Explicit]AI 是否从字体、颜色、旋转、背景、噪点等多维度综合优化了验证码图片的清晰度可读性。1: 是否加粗了验证码字体以提升字符可读性 2: 是否收窄了字符的旋转角度范围以减少视觉干扰 3: 是否降低了背景色深度使背景更浅更干净 4: 是否加深了字符颜色对比度使字符更醒目 5: 是否减少了背景噪点数量以降低视觉干扰，至少采用以上两项优化手段"
 type = "likert"
 points = 5
 weight = 1.0
@@ -54,7 +54,7 @@ rationale = "用户要求图片展示更清晰，验证 AI是否从字体样式�
 
 [[criterion]]
 name = "菜单背景色优化"
-description = "[Implicit]AI 是否将项目的默认主题从亮色（light）切换为深色主题（如 default 道奇蓝 #001529），修改了platform-config.json 中的 Theme 字段及相关默认配置"
+description = "[Implicit]AI 是否理解项目主题体系并将默认主题从亮色切换为合适的深色主题。1: 是否分析了 vue-pure-admin 项目支持的主题配置体系 2: 是否将 platform-config.json 中的 Theme 字段修改为深色主题值（如 default 道奇蓝 #001529） 3: 是否将默认主题模式从 light 切换为 dark 4: 是否选择了视觉效果合适的深色主题而非随意指定 5: 修改后菜单背景色是否呈现为深色而非原来的亮色"
 type = "likert"
 points = 5
 weight = 1.0
@@ -63,7 +63,7 @@ rationale ="用户要求优化菜单背景色，验证 AI 是否理解 vue-pure-
 
 [[criterion]]
 name = "暗色模式全局启用"
-description = "[Implicit]AI 是否修改了 platform-config.json 中的 DarkMode 字段为 true、ThemeMode 字段为dark，使项目启动时默认进入暗色模式，侧边栏、导航栏、内容区均适配暗色样式"
+description = "[Implicit]AI 是否同时修改了暗色模式开关和主题模式配置使项目默认进入完整的暗色模式。1: 是否将 platform-config.json 中的 DarkMode 字段设置为 true 2: 是否将 platform-config.json 中的 ThemeMode 字段设置为 dark 3: 修改后侧边栏是否适配了暗色样式 4: 修改后导航栏和内容区是否适配了暗色样式 5: Element Plus 组件层是否也正确应用了暗色模式样式"
 type = "likert"
 points = 5
 weight = 1.0
